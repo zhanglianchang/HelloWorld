@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center" (click)='testClick()'>
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  <img [src]="imgSrc">
+  <input type="text" [(ngModel)]='care'/>{{care}}
+
+  <p *ngIf='!flag'>使用ngif</p>
+  <p>{{currentTime | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+
+  <div [ngSwitch]="mapStatus">
+      <p *ngSwitchCase="0">下载中...</p>
+      <p *ngSwitchCase="1">正在读取...</p>
+      <p *ngSwitchDefault>系统繁忙</p>
+  </div>
+
+  <div [ngClass]="currentClasses">同时批量设置多个样式</div>
+  <button class="btn btn-success" (click)="setCurrentClasses()">设置</button>
+  
+</div>
